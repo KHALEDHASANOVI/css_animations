@@ -1,0 +1,122 @@
+.container {
+  width: 1140px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CSS 2D Transforms & CSS Transitions start CSS */
+.box-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.box {
+  height: 180px;
+  width: 180px;
+  border: 2px solid red;
+  background-color: lime;
+  text-align: center;
+  line-height: 180px;
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.6s 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.translate:hover {
+  transform: translate(50px, 100px);
+}
+.rotate:hover {
+  transform: rotate(45deg);
+}
+.scale:hover {
+  transform: scale(0.5, 0.5);
+}
+.skew:hover {
+  transform: skew(30deg);
+}
+.matrix:hover {
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+/* CSS 2D Transforms & CSS Transitions end CSS */
+
+/* CSS Animations start CSS */
+.box_A {
+  height: 180px;
+  width: 180px;
+  border: 2px solid red;
+  background-color: lime;
+  text-align: center;
+  line-height: 180px;
+  font-size: 24px;
+  font-weight: bold;
+  /* transition: transform 0.6s 0.2s cubic-bezier(0.4, 0, 1, 1); */
+  animation-name: animated;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes animated {
+  0% {
+    background-color: red;
+    transform: translate(0px);
+  }
+  25% {
+    background-color: orange;
+    transform: translate(1000px);
+  }
+  50% {
+    background-color: yellow;
+    transform: rotate(45deg);
+  }
+  75% {
+    background-color: lime;
+    transform: translate(100px);
+  }
+  100% {
+    background-color: white;
+    transform: translate(-100px);
+  }
+}
+
+/* CSS Animations end CSS */
+
+/* CSS Tooltip start CSS */
+.box-wraps_t {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.box_t {
+  /* background-color: aqua;
+  padding: 10px 20px;
+  border: 1px solid red;
+  border-radius: 5px; */
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.tooltip {
+  color: white;
+  background-color: rgb(0, 0, 0);
+  padding: 10px 20px;
+
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+  right: -20px;
+  top: 10px;
+}
+.box_t:hover .tooltip {
+  opacity: 1;
+}
+/* CSS Tooltip end CSS */
